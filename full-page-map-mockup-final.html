@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SILURE — Corporate Gifting — Full Page Map Mockup</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700;900&family=DM+Mono:wght@300;400;500&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Mono', monospace; background: #B8B4AC; padding: 50px 20px; }
+  .note { max-width: 860px; margin: 0 auto 30px; font-size: 12px; color: #333; line-height: 1.8; background: #fff; padding: 18px 22px; border-radius: 4px; }
+  .row { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; margin-bottom: 60px; }
+  .panel-label { text-align: center; font-size: 11px; color: #333; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+  .panel-sub { text-align: center; font-size: 10px; color: #666; margin-bottom: 10px; }
+  .panel { width: 460px; height: 460px; box-shadow: 0 8px 30px rgba(0,0,0,0.22); position: relative; overflow: hidden; background: #F5F1EA; }
+
+  .silure-logo { display: inline-flex; align-items: center; justify-content: center; border: 1.5px solid currentColor; padding: 4px 9px; }
+  .silure-logo-text { font-family: 'Mulish', sans-serif; font-weight: 900; font-size: 13px; letter-spacing: 1.5px; }
+
+  /* ===== PAGE 1 — COVER ===== */
+  .page1 { padding: 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #1A1A1A; }
+  .p1-eyebrow-top { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: #B5764A; margin-bottom: 30px; }
+  .silure-logo-large { display: inline-flex; align-items: center; justify-content: center; border: 3px solid #1A1A1A; padding: 16px 30px; margin-bottom: 30px; }
+  .silure-logo-large-text { font-family: 'Mulish', sans-serif; font-weight: 900; font-size: 40px; letter-spacing: 4px; }
+  .p1-title-simple { font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 22px; line-height: 1.3; max-width: 340px; margin-bottom: 14px; }
+  .p1-sub-simple { font-size: 12px; color: #555; line-height: 1.6; max-width: 320px; }
+
+  /* ===== PAGE 2 — PURITY / TRUST (synced with approved page2-revised.html) ===== */
+  .page2 { padding: 0; position: relative; color: #1A1A1A; }
+  .p2-bg-half { position: absolute; top: 0; bottom: 0; width: 50%; display: flex; align-items: flex-start; justify-content: center; overflow: hidden; padding-top: 30px; }
+  .p2-bg-925 { left: 0; background: #fff; }
+  .p2-bg-999 { right: 0; background: #191919; }
+  .p2-bg-img { width: 100%; height: auto; display: block; }
+
+  .p2-tint { position: absolute; inset: 0; background: rgba(0,0,0,0.12); z-index: 3; }
+
+  .p2-top { position: absolute; top: 18px; left: 22px; right: 22px; display: flex; justify-content: space-between; align-items: flex-start; z-index: 5; }
+  .p2-eyebrow { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; }
+  .p2-eyebrow.on-925 { color: #1A1A1A; }
+  .p2-eyebrow.on-999 { color: #fff; }
+
+  .p2-values { position: absolute; bottom: 10px; left: 22px; right: 22px; z-index: 5;
+    display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(4, auto);
+    column-gap: 18px; row-gap: 9px; }
+  .p2-value-item.on-925 { color: #1A1A1A; }
+  .p2-value-item.on-999 { color: #fff; }
+  .p2-value-label { text-transform: uppercase; letter-spacing: 0.3px; font-weight: 700; display: block; margin-bottom: 2px; font-size: 12px; color: #C9A67E; }
+  .p2-value-desc { line-height: 1.15; font-size: 11px; opacity: 0.9; }
+
+  /* ===== PAGE 3-8 — PRODUCT TEMPLATE ===== */
+  .page-product { padding: 0; position: relative; }
+  .pt-photo-area { width: 100%; height: 100%; background: #d8d2c6; display: flex; align-items: center; justify-content: center; color: #999; font-size: 10px; text-align: center; }
+  .pt-overlay {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to top,
+      rgba(10,10,10,0.90) 0%,
+      rgba(10,10,10,0.85) 15%,
+      rgba(10,10,10,0.72) 35%,
+      rgba(10,10,10,0.50) 55%,
+      rgba(10,10,10,0.28) 75%,
+      rgba(10,10,10,0.10) 90%,
+      rgba(10,10,10,0) 100%);
+    padding: 70px 20px 16px;
+    color: #fff;
+    display: flex; flex-direction: column; justify-content: flex-end;
+  }
+  .pt-top-tags { position: absolute; top: 16px; left: 16px; right: 16px; display: flex; justify-content: space-between; align-items: flex-start; }
+  .pt-index-badge { background: rgba(255,255,255,0.9); color: #1A1A1A; font-family: 'Mulish', sans-serif; font-weight: 900; font-size: 9px; padding: 4px 9px; }
+  .pt-qr-box { width: 42px; height: 42px; background: #fff; display: flex; align-items: center; justify-content: center; color: #999; font-size: 5.5px; text-align: center; }
+  .pt-name { font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 22px; margin-bottom: 3px; }
+  .pt-tagline { font-size: 12px; color: #E8A15C; font-style: italic; margin-bottom: 6px; }
+  .pt-belief { font-size: 11px; line-height: 1.5; color: #f0ede8; margin-bottom: 8px; max-width: 400px; }
+  .pt-specs-row { display: flex; font-size: 10px; color: #ddd; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 8px; flex-wrap: wrap; }
+  .pt-specs-row span { margin-right: 14px; }
+  .pt-specs-row b { color: #fff; }
+  .pt-bottom-row { display: flex; justify-content: space-between; align-items: center; }
+  .pt-tags-chips { display: flex; flex-wrap: wrap; }
+  .pt-chip { margin-right: 6px; font-size: 10px; border: 0.5px solid rgba(255,255,255,0.5); padding: 3px 8px; text-transform: uppercase; letter-spacing: 0.3px; color: #eee; }
+  .pt-cta { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #0A0A0A; background: #fff; padding: 7px 14px; font-weight: 700; }
+
+  /* ===== PAGE 9 — CUSTOM ENQUIRY ===== */
+  .page9 { padding: 28px; display: flex; flex-direction: column; justify-content: center; color: #1A1A1A; position: relative; }
+  /* p9-eyebrow, p9-title, p9-body, p9-list removed — confirmed dead CSS, never used in current Page 9 HTML */
+  .p9-cta-row { display: flex; align-items: center; }
+  .p9-qr { width: 60px; height: 60px; background: #fff; border: 1px solid #ddd; display: flex; align-items: center; justify-content: center; color: #999; font-size: 6px; }
+
+  /* ===== PAGE 10 — CLOSING ===== */
+  .page10 { padding: 30px; display: flex; flex-direction: column; justify-content: space-between; background: #0A0A0A; color: #fff; }
+  .p10-top .p10-eyebrow { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: #C9A67E; margin-bottom: 12px; }
+  .p10-title { font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 22px; line-height: 1.2; max-width: 340px; }
+  .p10-wish { font-size: 12px; color: #ccc; line-height: 1.6; margin-top: 14px; max-width: 320px; font-style: italic; }
+  .p10-bottom { display: grid; grid-template-columns: 90px 1fr; column-gap: 20px; align-items: end; border-top: 1px solid #333; padding-top: 20px; }
+  .p10-qr { width: 90px; height: 90px; background: #fff; display: flex; align-items: center; justify-content: center; color: #999; font-size: 7px; text-align:center; }
+  .p10-info { font-size: 11px; color: #999; line-height: 1.7; letter-spacing: 0.3px; }
+  .p10-cta-label { font-size: 11px; color: #C9A67E; letter-spacing: 0.4px; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+
+<div class="note">
+  One example of each of the 5 distinct page types you defined — pages 3-8 all reuse the same product template shown once here. All copy is placeholder/draft (real product details will replace it once your photos and specs arrive), but the structure, hierarchy, and every required element per your brief are in place for your review.
+</div>
+
+<div class="row">
+  <div>
+    <p class="panel-label">Page 1 — Cover</p>
+    <p class="panel-sub">Brand identity · occasion wish · what's inside</p>
+    <div class="panel" style="position:relative; overflow:hidden; padding:0;">
+      <img src="https://silure.in/wp-content/uploads/2026/09/cover2.jpg" style="width:100%; height:100%; object-fit:cover; display:block;" alt="cover">
+      <div style="position:absolute; inset:0; background:rgba(0,0,0,0.12);"></div>
+      <div style="position:absolute; top:24px; left:24px; right:30%; z-index:5;">
+        <div style="font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:#E8C9A0;">Corporate Gifting<br>Brochure</div>
+      </div>
+      <div style="position:absolute; bottom:20px; left:55%; right:24px; z-index:5;">
+        <div style="font-family:'Mulish',sans-serif; font-weight:700; font-size:20px; line-height:1.25; color:#1A1A1A; margin-bottom:10px;">Gifting That Inspires. Prosperity That Lasts.</div>
+        <div style="font-size:12px; color:#444; line-height:1.6;">A curated collection for the people who make your year auspicious.</div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <p class="panel-label">Page 2 — Purity, Materials &amp; Trust</p>
+    <p class="panel-sub">925 curvy-text numeral (Claude Design to refine) + trust values</p>
+    <div class="panel page2">
+      <div class="p2-bg-half p2-bg-925">
+        <img src="https://silure.in/wp-content/uploads/2026/09/925graphic.jpg" class="p2-bg-img" style="width:70%;" alt="925">
+      </div>
+      <div class="p2-bg-half p2-bg-999">
+        <img src="https://silure.in/wp-content/uploads/2026/09/999graphic.jpg" class="p2-bg-img" style="width:70%;" alt="999">
+      </div>
+
+      <div class="p2-tint"></div>
+
+      <div class="p2-top">
+        <div class="p2-eyebrow on-925">Why Trust Silure</div>
+        <div class="p2-eyebrow on-999">02</div>
+      </div>
+
+      <div class="p2-values">
+        <div class="p2-value-item on-925"><span class="p2-value-label">925 Sterling Silver</span><span class="p2-value-desc">For intricate, durable designs — industry-standard purity.</span></div>
+        <div class="p2-value-item on-999"><span class="p2-value-label">999 Fine Silver</span><span class="p2-value-desc">Our finest purity — for the most auspicious beliefs.</span></div>
+        <div class="p2-value-item on-925"><span class="p2-value-label">BIS Hallmarked</span><span class="p2-value-desc">Certified purity on every article.</span></div>
+        <div class="p2-value-item on-999"><span class="p2-value-label">Rooted in Tradition</span><span class="p2-value-desc">Every design carries genuine cultural meaning.</span></div>
+        <div class="p2-value-item on-925"><span class="p2-value-label">Handcrafted Detail</span><span class="p2-value-desc">Finished by hand, examined closely.</span></div>
+        <div class="p2-value-item on-999"><span class="p2-value-label">Fully Customisable</span><span class="p2-value-desc">Design, engraving &amp; packaging, shaped to you.</span></div>
+        <div class="p2-value-item on-925"><span class="p2-value-label">Made to Keep</span><span class="p2-value-desc">Meant to sit in a home or office for years.</span></div>
+        <div class="p2-value-item on-999"><span class="p2-value-label">Dedicated Account Support</span><span class="p2-value-desc">One point of contact for your whole order.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p class="panel-label" style="max-width:1100px; margin:40px auto 10px;">Pages 3–8 — Product Template, all 6 real products</p>
+<p class="panel-sub" style="max-width:1100px; margin:0 auto 10px;">Real photos, real names &amp; beliefs written from each image directly</p>
+<div class="row" style="max-width:1500px; margin:0 auto 60px; flex-wrap:wrap;">
+
+  <div>
+    <div class="panel page-product" style="background:#242424;">
+      <img src="https://silure.in/wp-content/uploads/2026/09/product1.jpg" style="width:100%;height:87%;object-fit:cover;object-position:center bottom;" alt="Silver Ganesh Idol">
+      <div class="pt-top-tags">
+        <div class="pt-index-badge">01 / 06</div>
+        <div class="pt-qr-box" style="flex-direction:column;padding:2px;"><img src="data:image/png;base64,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" style="width:100%;height:32px;display:block;"><span style="font-size:5px;">Enquire</span></div>
+      </div>
+      <div class="pt-overlay">
+        <div class="pt-name">Silver Ganesh Idol</div>
+        <div class="pt-tagline">for new beginnings</div>
+        <div class="pt-belief">Lord Ganesh is invoked before any new beginning — a venture, a festival, a home. Kept at an entrance or workspace, this idol is believed to clear obstacles before they arise and invite steady progress through the year ahead.</div>
+        <div class="pt-specs-row"><span><b>925</b></span><span><b>20-50g</b></span><span><b>Oxidised</b></span><span><b>BIS</b> Hallmarked</span></div>
+        <div class="pt-bottom-row">
+          <div class="pt-tags-chips">
+            <div class="pt-chip">Customisable</div>
+            <div class="pt-chip">Std / Premium Packaging</div>
+          </div>
+          <div class="pt-cta">Enquire Now</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="panel page-product" style="background:#242424;">
+      <img src="https://silure.in/wp-content/uploads/2026/09/product2.jpg" style="width:100%;height:87%;object-fit:cover;object-position:center bottom;" alt="Silver Elephant Figurine">
+      <div class="pt-top-tags">
+        <div class="pt-index-badge">02 / 06</div>
+        <div class="pt-qr-box" style="flex-direction:column;padding:2px;"><img src="data:image/png;base64,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" style="width:100%;height:32px;display:block;"><span style="font-size:5px;">Enquire</span></div>
+      </div>
+      <div class="pt-overlay">
+        <div class="pt-name">Silver Elephant Figurine</div>
+        <div class="pt-tagline">for strength &amp; wisdom</div>
+        <div class="pt-belief">Revered across Indian tradition as a symbol of strength, memory, and quiet wisdom. Kept in a home or office, it's believed to bring steady, grounded prosperity and guard against misfortune.</div>
+        <div class="pt-specs-row"><span><b>925</b></span><span><b>20-50g</b></span><span><b>Oxidised</b></span><span><b>BIS</b> Hallmarked</span></div>
+        <div class="pt-bottom-row">
+          <div class="pt-tags-chips">
+            <div class="pt-chip">Customisable</div>
+            <div class="pt-chip">Std / Premium Packaging</div>
+          </div>
+          <div class="pt-cta">Enquire Now</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="panel page-product" style="background:#242424;">
+      <img src="https://silure.in/wp-content/uploads/2026/09/product3.jpg" style="width:100%;height:87%;object-fit:cover;object-position:center bottom;" alt="Silver Kamadhenu Cow & Calf">
+      <div class="pt-top-tags">
+        <div class="pt-index-badge">03 / 06</div>
+        <div class="pt-qr-box" style="flex-direction:column;padding:2px;"><img src="data:image/png;base64,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" style="width:100%;height:32px;display:block;"><span style="font-size:5px;">Enquire</span></div>
+      </div>
+      <div class="pt-overlay">
+        <div class="pt-name">Silver Kamadhenu Cow &amp; Calf</div>
+        <div class="pt-tagline">for abundance &amp; nurture</div>
+        <div class="pt-belief">Kamadhenu, the wish-fulfilling cow, is one of the most sacred symbols of abundance in Hindu tradition. Shown here with her calf, she's believed to invite nourishment and lasting prosperity into a home or workplace.</div>
+        <div class="pt-specs-row"><span><b>925</b></span><span><b>20-50g</b></span><span><b>Oxidised</b></span><span><b>BIS</b> Hallmarked</span></div>
+        <div class="pt-bottom-row">
+          <div class="pt-tags-chips">
+            <div class="pt-chip">Customisable</div>
+            <div class="pt-chip">Std / Premium Packaging</div>
+          </div>
+          <div class="pt-cta">Enquire Now</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="panel page-product" style="background:#242424;">
+      <img src="https://silure.in/wp-content/uploads/2026/09/product4.jpg" style="width:100%;height:87%;object-fit:cover;object-position:center bottom;" alt="Silver Tortoise on Plate">
+      <div class="pt-top-tags">
+        <div class="pt-index-badge">04 / 06</div>
+        <div class="pt-qr-box" style="flex-direction:column;padding:2px;"><img src="data:image/png;base64,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" style="width:100%;height:32px;display:block;"><span style="font-size:5px;">Enquire</span></div>
+      </div>
+      <div class="pt-overlay">
+        <div class="pt-name">Silver Tortoise on Plate</div>
+        <div class="pt-tagline">for stability &amp; longevity</div>
+        <div class="pt-belief">A well-known Vaastu symbol of patience and long life. Placed thoughtfully in a home or office, it's believed to steady fortunes and encourage slow, lasting growth over fleeting gains.</div>
+        <div class="pt-specs-row"><span><b>925</b></span><span><b>20-50g</b></span><span><b>Oxidised</b></span><span><b>BIS</b> Hallmarked</span></div>
+        <div class="pt-bottom-row">
+          <div class="pt-tags-chips">
+            <div class="pt-chip">Customisable</div>
+            <div class="pt-chip">Std / Premium Packaging</div>
+          </div>
+          <div class="pt-cta">Enquire Now</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="panel page-product" style="background:#242424;">
+      <img src="https://silure.in/wp-content/uploads/2026/09/product5.jpg" style="width:100%;height:87%;object-fit:cover;object-position:center bottom;" alt="Silver Fish Set">
+      <div class="pt-top-tags">
+        <div class="pt-index-badge">05 / 06</div>
+        <div class="pt-qr-box" style="flex-direction:column;padding:2px;"><img src="data:image/png;base64,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" style="width:100%;height:32px;display:block;"><span style="font-size:5px;">Enquire</span></div>
+      </div>
+      <div class="pt-overlay">
+        <div class="pt-name">Silver Fish Set</div>
+        <div class="pt-tagline">for fortune &amp; flow</div>
+        <div class="pt-belief">A set of fish is one of the most widely recognised symbols of good fortune, linked to abundance and the free flow of prosperity. A popular gift for wishing someone a flourishing year ahead.</div>
+        <div class="pt-specs-row"><span><b>925</b></span><span><b>20-50g</b></span><span><b>Polished</b></span><span><b>BIS</b> Hallmarked</span></div>
+        <div class="pt-bottom-row">
+          <div class="pt-tags-chips">
+            <div class="pt-chip">Customisable</div>
+            <div class="pt-chip">Std / Premium Packaging</div>
+          </div>
+          <div class="pt-cta">Enquire Now</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="panel page-product">
+      <img src="https://silure.in/wp-content/uploads/2026/09/product6-new.jpeg" style="width:100%;height:auto;" alt="Silver Coins">
+      <div class="pt-top-tags">
+        <div class="pt-index-badge">06 / 06</div>
+        <div class="pt-qr-box" style="flex-direction:column;padding:2px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAhIAAAISAQAAAACxRhsSAAAFDUlEQVR4nO2dS27jOhBFD58EZEgDbwFZiryzh15S70BeShbQgDQMQKPegL9S3J9Bx4xhXA4MJ6IPRKBA3vqQDMbftss/f40AMcQQQ4wnYOyhtDPAJbR2gnDeZ8rTvXxA+18I8+e9hxhi/LqZbZOZmRnLBmaWYNkmYzEzW6MZRDNbY2o/qk9tm8zWRxmLGM/OKBMjk4UQZuzbCWAPgWW7BlvzVDpjazSzlfI0nD/5PcQQ4+dtPvx1DcZ+Iix2DcY+pbB8/9cCTInLGcLyNieI26e/hxhi/LaZbZPRl/IVgJgo36DIAGLKqqCLBBat+2IMYRz0qSWAqQhS24DFLEeusj5twlX6VIzRjGt23WF/qfPk20w4Mxnsc7bO8N/bS4217nONC5w+8z3EEOOXzVzbAJgsL+8rtPl0spvOrWk+FePujI9xKYhmZXnfWqfYbJKpCYJUHshOxbg7o7pG2+SM0IefYnIitUpYyPYsOxVjDOPGhedorNZc/bVNtD0aIH9fjDGMmoBykyp0BdBXe2DKSSmvAKRPxRjCoKhNFyEt2dIPZlvDqa1fUwqyUzHuzmj6tH5bq29f5tj2v2Ksh2KAVfpUjCEMX3gCTZVarz6pM2tpqarSaJpPxRjFKHaaxSd8XPddqdRiJQtVfljdKtmpGPdn0KP7vnwvegVQTDnnTaHW/9XkqexUjLszmvdeTQ/K4l9mTPMhqdovOWOVnYpxf4aLMn2sjm4x/dssQHLuv+xUjPszWl1fy6BmY60mWpQqNTgVEzcG/ChjEeN5GV6fumTT0Tqb+1/jAlPzqGSnYoxgtLxpL5BKB826QVWqdthDHZXfF2MYw2dLe3DKBVEBl98HX0ildV+MQQynSuvc2SP5vVRqsh7dx5WqaN0XYwjjsBF6u0lPuW/FOidfnao4vxhjGG6/qbED7CfscpqA+GPO0yvxx8yyXoNdzgRjB2OfEpfX9EnvIYYYv209LoUXn3XuBPAnTkifivEVjEMCtAVHl60J0lp12h18mj5FcSkxxjLy6SaTcTlBdfATEN9D7tE2okJ8z0ehlDDBo41FjOdjUBNQPmDaz55wif+W6e/Tq/L7YgxieH3aVvvbgOmx6i93lj4VYxijVUl1GXqo4m/hVGil/M3LUvxUjEEMesDendZTvvUq/rLad7fKS4NHGYsYz8vAJ5aAWm4C9LRT2xxdT5fwp6XITsW4P+Pj6XtZi7qcfzxWqXyQsJpPxRjCaFtNzayfjNJrqHw5annQ9YH8KDEGMaqJbtQQf9tRWg6g8JWouFMnu3B9lLGI8bwMuolWkdrSqD0u1VNW7hfaxyfGMIarky6t+lE9pt9dfWe7PSQgOxXj7oy26blYnd+w39ylpl59UgrFpcQYxjis4hsupu873e7pr012KsYIxvE8aT+fdj+qHt+XfLC1hwlkp2KMYPT7+OJ7MHsrd0XlY/jzR0yYvZUrplg2CLm4SvfxiTGM0fP2kEv0FzML4dVKFuoSXiyE02ThHBNcTmAr11AEwSONRYznZBzvj0p0i3W26wKmfb8faH+UGF/FCOf+rV8U2S/ePUEIr1a2oeSi6kcdixjPy7Bvp3529DXkS06J7+FwD+81hDPXUGJajzoWMZ6HcXMfX3HwfZlf3Q0Nh+NQk/L7YoxizORpEyhbogMYJGCfUyCm1mVKYfk+p7C8zdgltEjqo4xFjOdlBPtznz+0y6OMRQwxxBDjKxn/A9qq8A7badaYAAAAAElFTkSuQmCC" style="width:100%;height:32px;display:block;"><span style="font-size:5px;">Enquire</span></div>
+      </div>
+      <div class="pt-overlay">
+        <div class="pt-name">Silver Coins</div>
+        <div class="pt-tagline">for blessings, your way</div>
+        <div class="pt-belief">A silver coin embossed with a deity or sacred motif is a timeless way to gift blessings — meant to be kept, not spent. The design shown is one reference example; every coin is fully customisable to the deity, motif, or message you choose.</div>
+        <div class="pt-specs-row"><span><b>999</b></span><span><b>10-20g</b></span><span><b>Polished</b></span><span><b>BIS</b> Hallmarked</span></div>
+        <div class="pt-bottom-row">
+          <div class="pt-tags-chips">
+            <div class="pt-chip">Customisable</div>
+            <div class="pt-chip">Std / Premium Packaging</div>
+          </div>
+          <div class="pt-cta">Enquire Now</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+  <div>
+    <p class="panel-label">Page 9 — Custom Design Enquiry</p>
+    <p class="panel-sub">Same treatment as product pages — real photo, image shifted up 15%, overlay</p>
+    <div class="panel page-product">
+      <img src="https://silure.in/wp-content/uploads/2026/09/productlist-new.jpeg" style="width:100%;height:auto;" alt="More options">
+      <div class="pt-overlay" style="justify-content:space-between; flex-direction:row; align-items:flex-end;">
+        <div style="max-width:70%;">
+          <div class="pt-name">Custom Design Enquiries</div>
+          <div class="pt-belief" style="margin-bottom:0;">Every piece here can be adapted to your organisation. Logos, sizing, and packaging — all shaped around a brief you bring us.</div>
+        </div>
+        <div style="text-align:center; flex-shrink:0;">
+          <div class="pt-qr-box" style="flex-direction:column;padding:2px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAhIAAAISAQAAAACxRhsSAAAFQ0lEQVR4nO2dXa6kOAxGjwekegSpFzBLgZ1d9c5gKXcH8FgSyPMQJ5jqbvVIfSuDGOcB1Q91VJEsx/7sBFH+dMx//TECghGMYATjBoxVbIzsIuMqwpzegoyrpM9E+j1dYG3Jv2m/7n8EIxi/HqpLo6qqyrCATt2GToBONKpTtwHdhqpuMCwANMqgqum301XmEoy7M8wxArA+FLPEZ/KdOgEypleN6pTuM5d7tbkE446M9uW9DMs3BHYBGpVh+bYJPJS5B4EG6JYv/x/BCMa/ZnSbvRgWUNWnMPe7QLchHwuoLrvkxf99/yMYwfgpIwWfHAEpwNwDQwpcd9Gp25CRRmUEoNMcAVxrLsG4K2NPqXvK48e1BWhUPj4fCmsLrA+VMQWukD6bRUSk/8r/EYxg/Gq00BWpf91F5x4BQOGZlnzmvkkXnf/eUNjw5YGrzCUY92WcdalGTX7KMlUa6W3SpXK+P+iGLf5XmUsw7stAdQFTSBdIFkunSZyyCBTMWG2Yfhp2GoxKDLPTYWm8zp/ca1bygexyk4keTjV0/mBUYZR1f8ueFTATVbNYncjGWqw4Kf7p1VXmEoxbM7oNGdcWkb6xpfx7D8zSAqucBNO1RcZUBSi3XGguwbgvY21J1qn6FJ3WolBBuiSxf1jMOvV736h8LGCVgQvNJRg3ZeTEqYxBt1TG9z0nSy4FDE4XKKnWVeYSjPsyLD5NXVLpoj4WnbpsnUkD6DanEEQeFYxKjJIV4ZSnpFBNHKqV6adZHPDuNew0GO9nuL5SW+3VD7NOzU2o08svQj8NRhVGdpGHak92paUjJXvWRn2QALHuB6MWA1PyXRf/IfZv2WOWm124Smn5v8pcgnFfRlnULUnKEQDFY1K+tVQfVzcNOw1GLcba5sRpfaj1RJcaKYDX+bunALuk7tTQT4NRh+GrpTZKPbR0TFtUYKX9w2xjH18wKjFMl3JJEmQRtTuEfcAMOPf9m3QVdhqMioy5B0l1++RFd9EptfJbez/W99+mMEBGwIqnF5tLMG7IKOt+45yqFU9dKeqsnzqFKvTTYNRgmC7lt5A26mJRIJedulNuVX4bdhqM9zPwgWYu2b9Epd6flv7Tww2HnQbj7YxTvn9qMkkOtJRHve1mnZWw02DUYZDb9nNAar4zF/hLZeqIWX2HX/ShBKMKo9RNc1/pkT0NOVM6ulRO9lxuucpcgnFfxmv/aXalZRtUdwimRQjg1JsSdhqMaoy1RT6WRlU/RZj7Ru2MFCw0kLHbME01Dxm//H8EIxg/Hc53HnugJ4qzBF/fHxbwHdMRnwajCsP38x+F0qJGuapqiQDct1E3DUYdhgtDLZlfisTvDBNclpX6qfPNYafBeD+jhbVPL9JxvDZ2UdhhmHbRebTPgIcKgAxLOQvtKnMJxr0Zjd8GlfpKaZS5b/TY3Z93peyi+mnJlIzRfxqMKgyn8/vHRZT2vQmfauHj0xK4XmUuwbgvw+078TtQsiXiT5UqG6GTZ21C5w9GLYbfbzqcuvhfjpS0UtT5i6jvB6MOIytPh35a/OlQyvgctlvUqHK8b9hpMKowjufxuQ1R9uio43x+iwrA9/PH8/iCUYdxOve8XODUzWfjZX9U9PMHoxqDo1p6rPG556SYaJc1gHS01JJ/HHlUMOowznZa+k8pzvJclHJCwHHfVeYSjP8L43iYyVMYPi00de39NnbJh6aFzh+MGoxzfJqPNNWy5Ke3S767LP65aSr8aTBqMH6MNl2SlMOAIfem+N17RJ90MKoxRH9/z2/GfJW5BCMYwQjGf8n4B8qvUguNQgx6AAAAAElFTkSuQmCC" style="width:100%;height:32px;display:block;"><span style="font-size:5px;">Enquire</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="row" style="margin-bottom:20px;">
+  <div>
+    <p class="panel-label">Page 10 — Closing</p>
+    <p class="panel-sub">Universal contact QR, closing wishes</p>
+    <div class="panel page10">
+      <div class="p10-top">
+        <div class="p10-eyebrow">Let's Talk</div>
+        <div class="p10-title">Let's Plan Your Gifting</div>
+        <div class="p10-wish">Every order begins with a conversation, not a catalogue number. May this Diwali bring your organisation the same prosperity you're choosing to gift forward.</div>
+      </div>
+      <div class="p10-bottom">
+        <div class="p10-qr"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAhIAAAISAQAAAACxRhsSAAAFMklEQVR4nO2d0YrjOgyGf50E5tKFeYB5lPTNln2z9FHmARaSy4KDzoUs2e7uMAe29Snl90Vp0uYjASFLv2RHFH87Lv/8NQIggwwyyHgBxi5lnHGInHcRXEQEF5lhHwAgcjrKOewz/Jr5fvdBBhlfD9VtUlVVxaKqqhsAJFUsG6BryvbR/oop/jyprs/yLGS8OqM4xn2GnFOGmyPsHJbPGcXHfqjqaj+IyPnO90EGGf+RUWZ2Ef35kYFlmxRIqromVTNbpPz4+yCDjGbMN8cKHLMg5RnLdkAACJA2yLIdsyL9El22+98HGWR8z1DV4iJF5E11xaQipxKGAjjEzp3tAyg+9s73QQYZXzMOS93txLIB8uPTo9ISn76pnPfu3EVERE73vA8yyPhqzEAKqX8/RLEDClylhKERi15OExTI0MtHRlseeJZnIeN1GaZL2dcb5akZSctYMentFdSlyHg4AyadwmRSVZiJJtUagerq51Q1ezDrV9BOyXg8o1idyU+YzGMWib/6zrDipTksl9FOyXg8I7xjnfJvfo2yEyZtrTN+pZ2S8XBGxKfFixZnCQCLaVWTFpfrFmvnwr3STsl4PMP8aXGWqLM9gFLG9zLq0jjVMFHGp2QMYczA/q6yKCDL9p4F6ZdgWfOs2E8C7O8KYMoArgL73+ec9fKRAexzfp5nIeN1GeYsS6CZStNU9Z1e2s9FF1g2DwPKtZz3yRjBiJJpKE8bit5k34AmcTLZf9lczqJ+SsYYRqPzV13Ug89syVTJ7TfvOq1JP/N9MsYwPEmq4pTmOMxunWHKUQooij/nfTKGMSbVn6dJVT9FgP3NS6b7m+LycRUAh6BIV4cA6Soi8qa4nO55H2SQ8eVoqvUhojbiVPRJe4dfiK1+SH9KxuMZTR5VrFNrfKqu/VcDTrlpVqV+SsYghseYzWG3ts9Gp0sh+vkZn5IxjpGiPLoBuHyoyjllWPBpcqr1SfuaKUSDCuNTMsYw+vp+p+43jVRNfBoK1eZxLP0pGSMY6WpLTnTFIXJOV9EVgK2PKnLqEX+BOdpG9n+mZyHjRRm/xaerd59U1dTV/Zrv99c+y7OQ8bqMrp8fnkdVY43A1QOC3GRZnPfJGMTwFpQ4jD16mlp+qFFdzZ/xKRnDGK13jPwIqP6031/KBNPkHpj1fTLGMJp5vzFRG570a796r0SvtTzwLM9Cxusywk6LP60b9HWGGQ50i+wpsQ+FjGEMX3eSSr+UOVXrMN2iMhrzfjnXNlLRTsl4PMN1/uQx6trM+74VSuNPG2ONK57lWch4XUbYafWnbUdKWdtX8yggalSZ+T4ZoxjdBN4HqX9uPEGzQpr+lIxBjGahUzmsyRSigd/q+3EOUQpgfErGEEa3WxTqyhKgbaTq8/0VCHGK/pSMEYxOHAWizgR0S6L7/aWaxan0p2SMYHT7S4VCVVY+t3v4eUDarkZlHkXGIEaTGv0p1S8j1dCg3xiVdkrGEIZLolHfr+a4dAlWswuFeVbm+2QMZdT38aUM1c+yLlp/ng4p+/Oboz1sQ345Iz52vo+PjBGMGWWTM0Cwv2cBIIq0QZAAT/oPAVAX9gO2j79thvYsz0LG6zJu9z/VWCbdTfm+g0/b+gdQPyVjEON2HV8pNkWNNAr/baEUsZ807ZSMIYzf7LS8PaKuNumapgB46yn7pMkYzXAR9Sp1banlTD/Mig/xSr8v+jOjZh5FxhBG+27oxfUmoM7sGu3Q9RovCoD6KRljGKLf/+ebcXmWZyGDDDLI+D8Z/wJwFKg6WqdSigAAAABJRU5ErkJggg==" style="width:100%;height:100%;display:block;"></div>
+        <div>
+          <div class="p10-cta-label">Scan for WhatsApp enquiry</div>
+          <div class="p10-info">care@silure.in · +91-7050264414<br>Visit us at www.silure.in</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
